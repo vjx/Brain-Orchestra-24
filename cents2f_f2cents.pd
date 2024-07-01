@@ -1,0 +1,73 @@
+#N canvas 445 25 952 567 12;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array escala 13 float 3;
+#A 0 0 100 200 300 400 500 600 700 800 900 1000 1100 1200;
+#X coords 0 1200 13 0 200 140 1 0 0;
+#X restore 217 513 graph;
+#X obj 252 225 pow;
+#X obj 269 143 / 1200;
+#X obj 265 184 t b f;
+#X msg 207 194 2;
+#X obj 162 73 hradio 15 1 0 13 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X floatatom 324 232 5 0 0 0 - - -;
+#X obj 175 167 loadbang;
+#X obj 250 291 *;
+#X obj 101 228 nbx 5 14 -1e+037 1e+037 0 0 empty empty f0 0 -8 0 10
+-262144 -1 -1 432 256;
+#X obj 248 324 osc~;
+#X obj 257 256 t b f;
+#X obj 249 354 *~;
+#X obj 239 390 dac~;
+#X obj 325 326 vsl 25 70 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 72 19 cents measure the interval between two frequencies on
+a logarythimc scale base 2;
+#X obj 103 355 nbx 5 14 -1e+037 1e+037 0 0 empty empty f 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 610 207 log;
+#X msg 677 175 2;
+#X floatatom 555 260 5 0 0 0 - - -;
+#X floatatom 609 151 5 0 0 0 - - -;
+#X obj 610 255 * 1200;
+#X obj 644 90 /;
+#X obj 701 42 nbx 5 28 -1e+037 1e+037 0 0 empty empty f0 0 -8 0 20
+-262144 -1 -1 432 256;
+#X obj 544 40 nbx 5 28 -1e+037 1e+037 0 0 empty empty f 0 -8 0 20 -262144
+-1 -1 497 256;
+#X obj 701 118 loadbang;
+#X msg 703 80 432;
+#X obj 241 111 tabread escala_cents;
+#X msg 111 443 \; escala_cents 0 0 100 200 300 400 500 600 700 800
+900 1000 1100 1200;
+#X obj 610 338 nbx 5 28 -1e+037 1e+037 0 0 empty empty cents 0 -8 0
+20 -262144 -1 -1 242.657 256;
+#X connect 1 0 6 0;
+#X connect 1 0 11 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 3 1 1 1;
+#X connect 4 0 1 0;
+#X connect 5 0 27 0;
+#X connect 7 0 4 0;
+#X connect 8 0 10 0;
+#X connect 8 0 16 0;
+#X connect 9 0 8 0;
+#X connect 10 0 12 0;
+#X connect 11 0 8 0;
+#X connect 11 1 8 1;
+#X connect 12 0 13 0;
+#X connect 12 0 13 1;
+#X connect 14 0 12 1;
+#X connect 17 0 19 0;
+#X connect 17 0 21 0;
+#X connect 18 0 17 1;
+#X connect 20 0 17 0;
+#X connect 21 0 29 0;
+#X connect 22 0 20 0;
+#X connect 23 0 22 1;
+#X connect 24 0 22 0;
+#X connect 25 0 26 0;
+#X connect 25 0 18 0;
+#X connect 26 0 23 0;
+#X connect 27 0 2 0;
