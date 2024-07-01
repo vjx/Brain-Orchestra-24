@@ -1,4 +1,4 @@
-#N canvas 79 98 1077 629 12;
+#N canvas 185 131 1077 629 12;
 #X declare -lin else;
 #X obj 295 1005 dac~;
 #X obj 368 744 vsl 30 60 0 6 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
@@ -141,7 +141,7 @@
 #X obj 437 45 unpack f f;
 #X obj 316 112 print val_tag;
 #X obj 327 235 s Delta-synth;
-#N canvas 48 74 1167 728 Delta-synth 1;
+#N canvas 48 74 1167 728 Delta-synth 0;
 #X obj 84 281 soundfiler;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array BassDrum 103950 float 2;
