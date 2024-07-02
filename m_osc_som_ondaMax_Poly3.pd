@@ -141,7 +141,7 @@
 #X obj 437 45 unpack f f;
 #X obj 316 112 print val_tag;
 #X obj 327 235 s Delta-synth;
-#N canvas 48 74 1167 728 Delta-synth 1;
+#N canvas 48 74 1167 728 Delta-synth 0;
 #X obj 84 281 soundfiler;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array BassDrum 103950 float 2;
@@ -583,7 +583,7 @@
 #X connect 79 0 35 1;
 #X connect 80 0 31 0;
 #X restore 336 381 pd Alpha-synth;
-#N canvas 64 80 1047 719 Beta-synth 0;
+#N canvas 64 80 1047 719 Beta-synth 1;
 #X obj 327 892 bob~;
 #X obj 349 1025 outlet~;
 #X obj 389 836 sig~;
@@ -636,8 +636,8 @@
 #X obj 457 687 / 4096;
 #X obj 391 744 else/lfo -sine;
 #X obj 489 633 adsr 1 5 1 30 100;
-#X floatatom 354 204 5 0 0 0 - - - 0;
-#X msg 364 237 max \$1;
+#X floatatom 356 224 5 0 0 0 - - - 0;
+#X msg 366 257 max \$1;
 #X obj 390 782 else/rescale 72 128;
 #X obj 812 79 r ATR;
 #X floatatom 919 180 12 0 0 0 - - - 0;
@@ -659,6 +659,7 @@
 #X obj 188 254 vradio 20 1 0 8 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0;
 #X obj 419 313 else/count 2;
 #X obj 454 226 euclid4 2 0 8;
+#X msg 926 115 reset;
 #X connect 0 0 29 0;
 #X connect 2 0 0 1;
 #X connect 3 0 0 2;
@@ -735,6 +736,7 @@
 #X connect 73 0 10 0;
 #X connect 73 0 72 0;
 #X connect 74 0 11 0;
+#X connect 75 0 57 0;
 #X restore 521 395 pd Beta-synth;
 #X floatatom 521 343 5 0 0 0 - - - 0;
 #X floatatom 581 347 5 0 0 0 - - - 0;
