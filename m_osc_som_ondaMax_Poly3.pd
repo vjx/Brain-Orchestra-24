@@ -1,4 +1,4 @@
-#N canvas 265 79 1077 629 12;
+#N canvas 266 97 1077 629 12;
 #X declare -lin else;
 #X obj 295 1005 dac~;
 #X obj 368 744 vsl 30 60 0 6 0 0 empty empty empty 0 -9 0 10 #fcfcfc #000000 #000000 0 1;
@@ -13,7 +13,7 @@
 #X obj 42 699 tabwrite~ som;
 #X obj 89 646 tgl 15 0 empty empty graph\ sound 17 7 0 10 #fcfcfc #000000 #000000 0 1;
 #X obj 89 666 metro 100;
-#N canvas 62 108 1137 531 receiveOSC 0;
+#N canvas 203 185 1137 531 receiveOSC 1;
 #X obj 134 81 netreceive 3000;
 #X floatatom 228 106 4 0 0 0 - - - 0;
 #X msg 136 50 send foo \$1;
@@ -26,7 +26,7 @@
 #X floatatom 213 225 5 0 0 0 M - - 0;
 #X obj 84 538 s M;
 #X obj 284 107 outlet;
-#X obj 265 196 s MVal;
+#X obj 258 275 s MVal;
 #X listbox 403 229 20 0 0 1 ordem\ das\ ondas\ da\ máxima\ à\ mínima - - 0;
 #X listbox 442 381 50 0 0 0 - - - 0;
 #X obj 365 961 s val_tag;
@@ -34,7 +34,7 @@
 #X obj 685 331 s headSetConneted;
 #X obj 535 308 s Nota;
 #X floatatom 549 280 5 0 0 0 - - - 0;
-#X obj 307 245 s ordem;
+#X obj 319 322 s ordem;
 #X obj 84 508 list split 1;
 #X obj 732 272 s Interval;
 #X floatatom 734 240 5 0 0 0 - - - 0;
@@ -198,6 +198,7 @@
 #X obj 825 179 else/display;
 #X obj 736 150 * 15;
 #X obj 344 639 *~ 0.2;
+#X text 677 727 Se a uma das 3 ondas mais altas é a Delta então toca;
 #X connect 0 0 4 0;
 #X connect 0 0 30 0;
 #X connect 2 0 3 0;
@@ -329,6 +330,7 @@
 #X obj 263 368 spigot;
 #X obj 121 554 mtof;
 #X obj 122 528 - 24;
+#X text 573 299 Se a uma das 3 ondas mais altas é a Theta então toca;
 #X connect 0 0 66 0;
 #X connect 2 0 0 1;
 #X connect 3 0 0 2;
@@ -583,7 +585,7 @@
 #X connect 79 0 35 1;
 #X connect 80 0 31 0;
 #X restore 336 381 pd Alpha-synth;
-#N canvas 64 80 1047 719 Beta-synth 1;
+#N canvas 142 90 1047 719 Beta-synth 0;
 #X obj 327 892 bob~;
 #X obj 349 1025 outlet~;
 #X obj 389 836 sig~;
@@ -660,6 +662,7 @@
 #X obj 419 313 else/count 2;
 #X obj 454 226 euclid4 2 0 8;
 #X msg 926 115 reset;
+#X text 606 1051 Se a uma das 3 ondas mais altas é a Beta então toca;
 #X connect 0 0 29 0;
 #X connect 2 0 0 1;
 #X connect 3 0 0 2;
@@ -783,6 +786,7 @@
 #X obj 512 299 == 4;
 #X obj 555 302 == 4;
 #X obj 597 305 == 4;
+#X text 411 485 Se a uma das 3 ondas mais altas é a Gama então toca;
 #X connect 0 0 35 0;
 #X connect 1 0 0 1;
 #X connect 3 0 0 2;
